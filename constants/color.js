@@ -14,9 +14,9 @@ export const Colors = {
 
     light: { 
         text: "#fff",
-        title: "#201e2b", 
+        title: "#fff", 
         background: "#01061A", 
-        navBackground: "#e8e7ef", 
+        navBackground: "#762727", 
         iconColor: "#686477", 
         iconColorFocused: "#201e2b", 
         uiBackground:  "#d6d5e1", 
