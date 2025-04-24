@@ -58,9 +58,7 @@ const Register = () => {
             <Text style={styles.LoginButtonText}>Sign Up</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity>
             <Text style={styles.or}>or sign up with</Text>
-          </TouchableOpacity>
 
           <TouchableOpacity style={styles.LoginGoogleButton}>
             <View

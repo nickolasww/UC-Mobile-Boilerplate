@@ -3,6 +3,7 @@ import { Text, Image, TextInput,  TouchableOpacity, View, SafeAreaView, Touchabl
 import AntDesign from '@expo/vector-icons/AntDesign';
 import {router } from "expo-router"
 import { useState } from 'react';
+import {Link} from "expo-router"
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -51,8 +52,10 @@ const Login = () => {
           <Text style={styles.LoginButtonText}>Login</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity> 
+        <TouchableOpacity style={styles.forgetPasswordContainer}> 
+          <Link href="/auth/forgotpassword"> 
           <Text style={styles.forgetPassword}>Forget Password?</Text>
+          </Link>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.LoginGoogleButton}> 
@@ -114,11 +117,13 @@ const styles = StyleSheet.create({
     color: "#fff", 
     fontWeight: "bold", 
   },
+  forgetPasswordContainer: { 
+    marginTop: 20,
+    marginBottom: 20,
+  },
   forgetPassword: { 
     color: "#8b2331",
     textAlign: "center",
-    marginTop:20,
-    marginBottom:20,
     fontWeight: "bold",
   }, 
   LoginGoogleButton:{ 
