@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <View style={styles.container}> 
         <Text style={styles.title}>This is Homepage</Text>
-        <Link href="/" style={styles.link}>Go back</Link>
+        <Link href="/" className='underline-offset-1 text-[#007BFF]'>Go back</Link>
     </View>
   )
 }
