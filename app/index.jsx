@@ -12,6 +12,7 @@ import {
 } from "react-native"
 import { Link, router } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
+import "../global.css"
 
 const { width, height } = Dimensions.get("window")
 
@@ -87,8 +88,8 @@ export default function App() {
 
             <View style={styles.contentContainer}>
               <View style={styles.textContainer}>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.subtitle}>{item.subtitle}</Text>
+                <Text className="text-white font-bold text-4xl text-center mb-10">{item.title}</Text>
+                <Text className="text-center text-white text-sm">{item.subtitle}</Text>
               </View>
 
               <View style={styles.paginationContainer}>
