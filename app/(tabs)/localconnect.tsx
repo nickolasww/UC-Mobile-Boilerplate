@@ -4,12 +4,12 @@ import {router } from "expo-router"
 import { useState } from 'react';
 import {Link} from "expo-router"
 
-const Finder = () => {
+const LocalConnect = () => {
   return (
-    <View>
-        
+    <View> 
+      <Text>Ini adalah page Localconnect </Text>
     </View>
   )
 }
 
-export default Finder
+export default LocalConnect

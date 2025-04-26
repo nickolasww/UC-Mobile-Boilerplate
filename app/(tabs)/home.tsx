@@ -3,13 +3,14 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import {router } from "expo-router"
 import { useState } from 'react';
 import {Link} from "expo-router"
+import Header from '../../components/home/header';
 
-const RentWare = () => {
+const Home = () => {
   return (
     <View> 
-        
-    </View>
+    <Header/>
+  </View>
   )
 }
 
-export default RentWare
+export default Home

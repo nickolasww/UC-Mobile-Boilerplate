@@ -4,12 +4,12 @@ import {router } from "expo-router"
 import { useState } from 'react';
 import {Link} from "expo-router"
 
-const Repair = () => {
+const SmartPlanner = () => {
   return (
     <View> 
-        
+        <Text>Ini adalah page Smart Planner </Text>
     </View>
   )
 }
 
-export default Repair
+export default SmartPlanner

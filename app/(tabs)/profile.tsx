@@ -7,6 +7,7 @@ import {Link} from "expo-router"
 const Profile = () => {
   return (
     <View> 
+        <Text>Ini adalah page Profile </Text>
     </View>
   )
 }

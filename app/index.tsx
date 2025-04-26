@@ -24,17 +24,20 @@ export default function App() {
     {
       id: "1",
       title: "Welcome to Glamify!",
+      image: require("../assets/BeachLanding.png"), 
       subtitle: "Your go-to platform for sustainable fashion!\nDiscover an easy way to switch to an eco-friendly lifestyle while staying stylish.",
       showBackButton: false,
     },
     {
       id: "2",
       title: "Marketplace & RentWear",
+      image: require("../assets/GunungLanding.png"), 
       subtitle: "Buy & sell sustainable and preloved fashion. Rent outfits for any occasion from sustainable brands & other users.",
       showBackButton: true,
     },
     {
       id: "3",
+      image: require("../assets/MomLanding.png"), 
       title: "Join Our Community",
       showBackButton: true,
     }
@@ -68,8 +71,8 @@ export default function App() {
     return (
       <View style={styles.slide}>
         <ImageBackground
-          source={{ uri: item.image }}
-          style={styles.backgroundImage}
+          source={item.image}
+          className="flex-1 bg-cover"
         >
           <SafeAreaView style={styles.safeArea}>
             <View style={styles.header}>
