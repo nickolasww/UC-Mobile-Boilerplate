@@ -36,7 +36,6 @@ export default function App() {
     {
       id: "3",
       title: "Join Our Community",
-      subtitle: "Connect with like-minded individuals who are passionate about sustainable fashion and making a positive impact.",
       showBackButton: true,
     }
   ]
