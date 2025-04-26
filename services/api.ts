@@ -42,3 +42,28 @@ export const getUserProfile = async (token: string) => {
     throw Error;
   }
 };
+
+export const registerUser = async (name: string, email: string, password: string, confirmPassword: string ) => { 
+  if (password !== confirmPassword) {
+    throw new Error("Passwords do not match.");
+  }
+
+  try{ 
+    const response = await fetch(`${API_BASE_URL}/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Registration failed");
+    }
+    return data;
+  }catch (error) {
+    throw new Error("Registration failed. Please try again.");
+  }
+}

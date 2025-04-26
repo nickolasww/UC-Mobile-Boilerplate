@@ -8,15 +8,39 @@ import {
   SafeAreaView,
   Touchable,
   StyleSheet,
+  Alert,
 } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { router } from "expo-router";
 import { useState } from "react";
+import { registerUser } from "../../services/api";
 
 const Register = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
     const HandleSignin = () => {
         router.push("/auth/login")
+    }
+
+    const handleRegister = async () => { 
+      if(!name || !email || !password || !confirmPassword) {
+        return Alert.alert("Please fill in all fields.")
+      }
+      try { 
+        setIsSubmitting(true)
+        const data = await registerUser(name, email, password, confirmPassword) 
+        Alert.alert("Registration Successful", "You can login.")
+        router.push("/auth/login")
+      }catch (error) {  
+        Alert.alert("Registration Failed", error.message || "Please try again.")
+      }
+      finally {
+        setIsSubmitting(false)
+      }
     }
   return (
     <View style={styles.container}>
@@ -29,8 +53,8 @@ const Register = () => {
             style={styles.input}
             placeholder="input your first name"
             placeholderTextColor="#999"
-            // value={email}
-            // onChangeText={setEmail}
+            value={name}
+            onChangeText={setName}
           />
 
           <Text style={{ fontSize: 12, marginBottom: 5 }}>Email</Text>
@@ -38,6 +62,8 @@ const Register = () => {
             style={styles.input}
             placeholder="xxxxxx@gmail.com   "
             placeholderTextColor="#999"
+            value={email}
+            onChangeText={setEmail}
           />
 
           <Text style={{ fontSize: 12, marginBottom: 5 }}>Password</Text>
@@ -45,6 +71,9 @@ const Register = () => {
             style={styles.input}
             placeholder="Input your password"
             placeholderTextColor="#999"
+            secureTextEntry
+            value={password}
+            onChangeText={setPassword}
           />
 
           <Text style={{ fontSize: 12, marginBottom: 5 }}> Confirm Password</Text>
@@ -52,10 +81,13 @@ const Register = () => {
             style={styles.input}
             placeholder="Input confirm password"
             placeholderTextColor="#999"
+            secureTextEntry 
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
           />
 
           <TouchableOpacity style={styles.LoginButton}>
-            <Text style={styles.LoginButtonText}>Sign Up</Text>
+            <Text style={styles.LoginButtonText}>{isSubmitting ? "Registering..." : "Sign up"}</Text>
           </TouchableOpacity>
 
             <Text style={styles.or}>or sign up with</Text>
