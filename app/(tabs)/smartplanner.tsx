@@ -16,7 +16,6 @@ import { Ionicons } from "@expo/vector-icons";
 const { width, height } = Dimensions.get("window");
 
 export default function SmartPlanner() {
-  const [currentPage, setCurrentPage] = useState(0);
   const flatListRef = useRef(null);
 
   const slides = [
