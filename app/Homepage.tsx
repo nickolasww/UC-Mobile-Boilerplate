@@ -6,7 +6,6 @@ import Header from '../components/home/header';
 const Homepage = () => {
   return (
     <View> 
-      <Header/>
     </View>
   )
 }

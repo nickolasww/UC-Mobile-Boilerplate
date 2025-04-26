@@ -16,6 +16,7 @@ const Header = () => {
         placeholderTextColor="#999"
       />
       </View>
+
     </View>
   );
 };

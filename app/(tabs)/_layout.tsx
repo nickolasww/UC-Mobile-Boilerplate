@@ -18,22 +18,22 @@ const TabLayout = () => {
         }}
       />
    <Tabs.Screen
-          name="localconnect"
+          name="smartplanner"
           options={{
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="people-outline" size={size} color={color} />
+              <Ionicons name="clipboard-outline" size={size} color={color} />
             ),
             tabBarLabel: () => null,  // Menghilangkan label
           }}
         />
    {/* Smart Planner Tab */}
    <Tabs.Screen
-          name="smartplanner"
+          name="localconnect"
           options={{
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="clipboard-outline" size={size} color={color} />
+              <Ionicons name="people-outline" size={size} color={color} />
             ),
             tabBarLabel: () => null, 
           }}
